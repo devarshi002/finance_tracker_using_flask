@@ -1,0 +1,101 @@
+/* General Reset and Base Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #e0f7fa, #b9fbc0); /* Light green gradient background */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+    justify-content: center; /* Center content vertically */
+    height: 100vh; /* Full viewport height */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Container Styling */
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    max-width: 600px; /* Adjusted for better fit */
+    width: 100%;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Title Styling */
+h1 {
+    color: #333;
+    font-size: 2.5em;
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Form Styling */
+form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Space between form elements */
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px; /* Space below labels */
+}
+
+input[type="text"], select {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: calc(100% - 22px); /* Full width minus padding */
+    box-sizing: border-box; /* Ensures padding is included in width */
+}
+
+/* Add Transaction Button */
+button[type="submit"] {
+    background-color: #4caf50; /* Green color */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    align-self: center; /* Center button horizontally */
+}
+
+button[type="submit"]:hover {
+    background-color: #388e3c; /* Darker green on hover */
+    transform: scale(1.05);
+}
+
+/* Back to Home Button */
+a {
+    text-decoration: none;
+    color: #fff;
+    background-color: #4caf50; /* Green color */
+    font-size: 1.2em;
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 20px;
+    text-align: center;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+a:hover {
+    background-color: #388e3c; /* Darker green on hover */
+    transform: scale(1.05);
+}
+
+/* Message Styling */
+.message {
+    color: #4caf50; /* Green color */
+    font-size: 1.2em;
+    text-align: center;
+    margin-top: 20px;
+}

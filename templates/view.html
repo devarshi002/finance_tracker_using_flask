@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View Transactions</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>View Transactions</h1>
+    <form method="post">
+        <label for="start_date">Start Date:</label>
+        <input type="text" name="start_date" id="start_date" placeholder="dd-mm-yyyy">
+        
+        <label for="end_date">End Date:</label>
+        <input type="text" name="end_date" id="end_date" placeholder="dd-mm-yyyy">
+        
+        <input type="submit" value="View Transactions">
+    </form>
+    
+    {% if transactions %}
+        <h2>Transactions</h2>
+        {{ transactions | safe }}
+        
+        <form method="post">
+            <input type="hidden" name="start_date" value="{{ request.form.get('start_date') }}">
+            <input type="hidden" name="end_date" value="{{ request.form.get('end_date') }}">
+            <input type="submit" name="plot" value="Show Plot">
+        </form>
+        
+        {% if plot_url %}
+            <h2>Plot</h2>
+            <img src="{{ plot_url }}" alt="Income and Expense Plot">
+        {% endif %}
+    {% endif %}
+    
+    <a href="{{ url_for('index') }}">Back to Home</a>
+</body>
+</html>

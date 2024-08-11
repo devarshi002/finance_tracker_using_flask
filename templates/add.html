@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Transaction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles2.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Add New Transaction</h1>
+        <form action="{{ url_for('add') }}" method="POST">
+            <label for="date">Date (dd-mm-yyyy):</label>
+            <input type="text" id="date" name="date" required>
+            
+
+            <label for="amount">Amount:</label>
+            <input type="text" id="amount" name="amount" required>
+            
+
+            <label for="category">Category:</label>
+            <select id="category" name="category" required>
+                <option value="Income">Income</option>
+                <option value="Expense">Expense</option>
+            </select>
+            
+
+            <label for="description">Description (optional):</label>
+            <input type="text" id="description" name="description">
+            
+
+            <button type="submit" class="btn">Add Transaction</button>
+        </form>
+
+        {% if message %}
+            <p class="message">{{ message }}</p>
+        {% endif %}
+
+        <a href="{{ url_for('index') }}" class="btn">Back to Home</a>
+    </div>
+</body>
+</html>
